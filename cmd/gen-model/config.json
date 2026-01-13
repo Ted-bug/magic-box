@@ -1,0 +1,12 @@
+{
+  "dsn": "root:root@tcp(127.0.0.1:3306)/ai_marketing?charset=utf8mb4&parseTime=True&loc=Local",
+  "out_path": "./models",
+  "out_file": "gen.go",
+  "only_model": true,
+  "with_unit_test": false,
+  "model_pkg_path": "models",
+  "with_import_path": ["common/types"],
+  "field_nullable": false,
+  "field_coverable": false,
+  "tables": ["company_info"]
+}
