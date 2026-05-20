@@ -13,6 +13,7 @@ var config = flag.String("conf", "config.json", "生成所需的配置文件")
 
 // 生成相关：https://gorm.io/gen/database_to_structs.html
 func main() {
+	flag.Parse()
 	conf := NewConfig(*config)
 
 	g := gen.NewGenerator(gen.Config{
