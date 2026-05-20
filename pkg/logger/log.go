@@ -48,7 +48,7 @@ func NewLogger(c Config) (*Logger, error) {
 	logger.SetLevel(level)
 
 	// 设置日志输出格式
-	logrus.SetFormatter(&logrus.TextFormatter{
+	logger.SetFormatter(&logrus.TextFormatter{
 		TimestampFormat: time.RFC3339,
 	})
 	if c.Format == "json" {
@@ -86,7 +86,8 @@ func NewLogger(c Config) (*Logger, error) {
 func (l *Logger) NewLogger(call string) *Logger {
 	entry := l.Entry.WithField("caller", call)
 	return &Logger{
-		Entry: entry,
+		Entry:    entry,
+		skipCall: l.skipCall,
 	}
 }
 

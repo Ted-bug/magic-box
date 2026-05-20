@@ -7,8 +7,5 @@ type CommonMethod struct {
 }
 
 func (m *CommonMethod) IsEmpty() bool {
-	if m == nil || m.ID == 0 {
-		return false
-	}
-	return true
+	return m == nil || m.ID == 0
 }
